@@ -8,4 +8,6 @@ RUN set -eux && \
   cp /usr/bin/envsubst /usr/local/bin/envsubst && \
   apk del build_deps
 
-ENTRYPOINT ["/usr/local/bin/envsubst"]
+COPY entrypoint.sh .
+
+ENTRYPOINT ["./entrypoint.sh"]
